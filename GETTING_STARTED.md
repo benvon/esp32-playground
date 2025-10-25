@@ -103,12 +103,23 @@ See [docs/DOCKER_GUIDE.md](docs/DOCKER_GUIDE.md) for detailed instructions.
 ### Test Pico
 
 - [ ] Navigate to Pico directory: `cd pico/`
-- [ ] Create a test project or use Pico examples
-- [ ] Example: `cp -r ~/pico/pico-sdk/../pico-examples/blink ./test-pico` (if pico-examples is installed)
-- [ ] Build: `cd test-pico && mkdir build && cd build && cmake .. && make -j4`
+- [ ] Create a simple test project or clone Pico examples repository:
+  ```bash
+  # Option 1: Clone Pico examples (recommended)
+  git clone https://github.com/raspberrypi/pico-examples.git
+  cd pico-examples/blink
+  
+  # Option 2: If you already have pico-examples installed
+  cp -r ~/pico/pico-examples/blink ./test-pico
+  cd test-pico
+  ```
+- [ ] Build: `mkdir build && cd build && cmake .. && make -j4`
 - [ ] Connect Pico with BOOTSEL button held
 - [ ] Verify RPI-RP2 drive appears
-- [ ] Copy .uf2 file: `cp test-pico.uf2 /media/$USER/RPI-RP2/` (Linux)
+- [ ] Copy .uf2 file to Pico (adjust path as needed):
+  - Linux: `cp blink.uf2 /media/$USER/RPI-RP2/`
+  - macOS: `cp blink.uf2 /Volumes/RPI-RP2/`
+  - Windows: Drag and drop `blink.uf2` to RPI-RP2 drive
 - [ ] Pico will reboot and run the program
 - [ ] Verify onboard LED is blinking
 
