@@ -21,6 +21,8 @@ Before you begin, ensure you have:
 
 ### Setup Instructions
 
+**📋 New to this project? Start with the [Getting Started Checklist](GETTING_STARTED.md)!**
+
 1. **Clone this repository:**
    ```bash
    git clone https://github.com/benvon/esp32-playground.git
@@ -30,6 +32,7 @@ Before you begin, ensure you have:
 2. **Choose your platform and follow the setup guide:**
    - [ESP32 Setup Guide](docs/ESP32_SETUP.md) - Complete ESP-IDF installation
    - [Pico Setup Guide](docs/PICO_SETUP.md) - Complete Pico SDK installation
+   - [Docker Guide](docs/DOCKER_GUIDE.md) - Containerized development environment
 
 3. **Open in VS Code:**
    ```bash
@@ -106,10 +109,14 @@ This environment includes:
 
 ## Documentation
 
+- **[Getting Started Checklist](GETTING_STARTED.md)** - Step-by-step setup checklist
+- **[Quick Reference Guide](docs/QUICK_REFERENCE.md)** - Common commands and workflows
 - [ESP32 Setup Guide](docs/ESP32_SETUP.md) - ESP-IDF installation and usage
 - [Pico Setup Guide](docs/PICO_SETUP.md) - Pico SDK installation and usage
+- [Docker Guide](docs/DOCKER_GUIDE.md) - Containerized development environment
 - [ESP32 Projects README](esp32/README.md) - ESP32 project guidelines
 - [Pico Projects README](pico/README.md) - Pico project guidelines
+- [Contributing Guide](CONTRIBUTING.md) - How to contribute to this project
 
 ## Resources
 
