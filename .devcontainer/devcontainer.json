@@ -1,0 +1,35 @@
+{
+  "name": "ESP32 & Pico Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cmake-tools",
+        "espressif.esp-idf-extension",
+        "marus25.cortex-debug",
+        "raspberry-pi.raspberry-pi-pico",
+        "editorconfig.editorconfig"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+      }
+    }
+  },
+  
+  "remoteUser": "root",
+  "postCreateCommand": "echo 'Development environment ready!'",
+  
+  "mounts": [
+    "source=/dev,target=/dev,type=bind"
+  ],
+  
+  "runArgs": [
+    "--privileged"
+  ]
+}

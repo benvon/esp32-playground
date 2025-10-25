@@ -30,3 +30,44 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# ESP32 / ESP-IDF
+esp32/**/build/
+esp32/**/sdkconfig
+esp32/**/sdkconfig.old
+esp32/**/.config
+esp32/**/.config.old
+esp32/**/bootloader/
+esp32/**/dependencies.lock
+esp32/**/managed_components/
+
+# Raspberry Pi Pico
+pico/**/build/
+pico/**/*.uf2
+pico/**/*.bin
+pico/**/*.elf
+pico/**/*.dis
+pico/**/*.map
+pico/**/*.hex
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Compiled Object files
+*.o
+*.obj
+*.slo
+*.lo
+*.a
+*.la
+*.lai
+*.lib
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb

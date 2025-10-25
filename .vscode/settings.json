@@ -1,0 +1,46 @@
+{
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "C_Cpp.default.intelliSenseMode": "gcc-arm",
+  "C_Cpp.default.compilerPath": "/usr/bin/arm-none-eabi-gcc",
+  
+  // ESP-IDF Settings
+  "idf.espIdfPath": "${env:HOME}/esp/esp-idf",
+  "idf.toolsPath": "${env:HOME}/.espressif",
+  "idf.pythonBinPath": "${env:HOME}/.espressif/python_env/idf5.1_py3.8_env/bin/python",
+  "idf.port": "/dev/ttyUSB0",
+  "idf.baudRate": "115200",
+  "idf.flashType": "UART",
+  
+  // Pico SDK Settings
+  "cmake.configureSettings": {
+    "PICO_SDK_PATH": "${env:HOME}/pico/pico-sdk"
+  },
+  
+  // File associations
+  "files.associations": {
+    "*.h": "c",
+    "*.c": "c",
+    "CMakeLists.txt": "cmake"
+  },
+  
+  // Editor settings
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  
+  // C/C++ formatting
+  "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100 }",
+  
+  // Terminal settings
+  "terminal.integrated.env.linux": {
+    "PICO_SDK_PATH": "${env:HOME}/pico/pico-sdk"
+  },
+  "terminal.integrated.env.osx": {
+    "PICO_SDK_PATH": "${env:HOME}/pico/pico-sdk"
+  },
+  "terminal.integrated.env.windows": {
+    "PICO_SDK_PATH": "C:\\pico\\pico-sdk"
+  }
+}

@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+esp32/**/build/
+pico/**/build/
+**/CMakeFiles/
+**/CMakeCache.txt
+
+# Binaries
+*.elf
+*.bin
+*.uf2
+*.hex
+*.map
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# License
+LICENSE

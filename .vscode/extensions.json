@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    // C/C++ Development
+    "ms-vscode.cpptools",
+    "ms-vscode.cpptools-extension-pack",
+    "ms-vscode.cmake-tools",
+    
+    // ESP32 Development
+    "espressif.esp-idf-extension",
+    
+    // Raspberry Pi Pico Development
+    "marus25.cortex-debug",
+    "raspberry-pi.raspberry-pi-pico",
+    
+    // General utilities
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "visualstudioexptteam.vscodeintellicode"
+  ]
+}
