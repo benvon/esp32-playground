@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Combined ESP32 and Pico development environment
+  dev:
+    build:
+      context: .
+      target: combined
+    volumes:
+      - .:/workspace
+      - esp-idf-tools:/opt/espressif
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0  # ESP32 (adjust as needed)
+      - /dev/ttyACM0:/dev/ttyACM0  # Pico (adjust as needed)
+    privileged: true
+    tty: true
+    stdin_open: true
+    working_dir: /workspace
+
+  # ESP32-only development environment
+  esp32:
+    build:
+      context: .
+      target: esp32-dev
+    volumes:
+      - ./esp32:/workspace/esp32
+      - esp-idf-tools:/opt/espressif
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0  # Adjust as needed
+    privileged: true
+    tty: true
+    stdin_open: true
+    working_dir: /workspace
+
+  # Pico-only development environment
+  pico:
+    build:
+      context: .
+      target: pico-dev
+    volumes:
+      - ./pico:/workspace/pico
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0  # Adjust as needed
+    privileged: true
+    tty: true
+    stdin_open: true
+    working_dir: /workspace
+
+volumes:
+  esp-idf-tools:

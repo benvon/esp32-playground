@@ -1,0 +1,87 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ESP-IDF: Build project",
+      "type": "shell",
+      "command": "idf.py build",
+      "options": {
+        "cwd": "${workspaceFolder}/esp32/${workspaceFolderBasename}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "ESP-IDF: Clean",
+      "type": "shell",
+      "command": "idf.py fullclean",
+      "options": {
+        "cwd": "${workspaceFolder}/esp32/${workspaceFolderBasename}"
+      }
+    },
+    {
+      "label": "ESP-IDF: Flash",
+      "type": "shell",
+      "command": "idf.py -p ${config:idf.port} flash",
+      "options": {
+        "cwd": "${workspaceFolder}/esp32/${workspaceFolderBasename}"
+      },
+      "dependsOn": "ESP-IDF: Build project"
+    },
+    {
+      "label": "ESP-IDF: Monitor",
+      "type": "shell",
+      "command": "idf.py -p ${config:idf.port} monitor",
+      "options": {
+        "cwd": "${workspaceFolder}/esp32/${workspaceFolderBasename}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: Build project",
+      "type": "shell",
+      "command": "cmake --build build -j4",
+      "options": {
+        "cwd": "${workspaceFolder}/pico/${workspaceFolderBasename}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Pico: Configure (CMake)",
+      "type": "shell",
+      "command": "cmake -B build -DPICO_SDK_PATH=${env:PICO_SDK_PATH}",
+      "options": {
+        "cwd": "${workspaceFolder}/pico/${workspaceFolderBasename}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: Clean",
+      "type": "shell",
+      "command": "rm -rf build",
+      "options": {
+        "cwd": "${workspaceFolder}/pico/${workspaceFolderBasename}"
+      }
+    },
+    {
+      "label": "Pico: Flash (picotool)",
+      "type": "shell",
+      "command": "picotool load -x build/${workspaceFolderBasename}.uf2 -f",
+      "options": {
+        "cwd": "${workspaceFolder}/pico/${workspaceFolderBasename}"
+      },
+      "dependsOn": "Pico: Build project"
+    }
+  ]
+}
